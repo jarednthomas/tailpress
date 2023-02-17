@@ -99,3 +99,8 @@ Several colors and font sizes are defined from the beginning. You can modify the
 ## License
 
 MIT. Please see the [License File](/LICENSE) for more information.
+
+# Pulling from origin upstream/master (example origin upstream/master: jeffreyvr/tailpress)
+git remote add upstream https://github.com/jeffreyvr/tailpress.git
+git fetch upstream
+git merge upstream/master

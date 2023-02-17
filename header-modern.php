@@ -27,7 +27,7 @@
 
 	<header class="sticky top-0 w-full z-50">
 
-			<div  class="sm:flex sm:justify-between sm:items-center bg-white dark:bg-black transition-all duration-150 py-6 px-4 pr-6 sm:px-6 sm:pr-10">
+			<div class="sm:flex sm:justify-between sm:items-center bg-white dark:bg-black transition-all duration-150 py-6 px-4 pr-6 sm:px-6 sm:pr-10">
 				<div class="flex justify-between items-center">
 
 					<div class="flex items-center">
@@ -36,9 +36,12 @@
 						$site_logo_url = wp_get_attachment_image_url( get_theme_mod( 'custom_logo' ) , 'thumbnail' );
 						if( !empty( $site_logo_url ) ): ?>
 							<a href="/">
-								<img class="object-contain w-12 h-12 transition-all ease-linear duration-100 hover:scale-110 w-auto rounded-full z-50" src="<?php echo $site_logo_url;?>" alt="" srcset="">
+								<img class="object-contain w-12 h-12 transition-all ease-linear duration-100 hover:scale-110 rounded-full z-50" src="<?php echo $site_logo_url;?>" alt="" srcset="">
 							</a>
-							<h1 class="text-xl font-bold mb-0 ml-4 cursor-pointer select-none"><?php echo "Jared Thomas";?></h1>
+							<h1 class="text-xl font-bold mb-0 ml-4 cursor-pointer select-none">
+								<span class="bg-clip-text text-transparent bg-gradient-to-r from-primary dark:from-secondary to-secondary dark:to-primary">
+									<?php echo "Jared Thomas";?></h1>
+								</span>
 						<?php endif; ?>
 
 						<div class="flex justify-center px-4">
@@ -85,6 +88,8 @@
 					?>
 				</div>
 			</div>
+
+			<div data-aos="remove-shadow" data-aos-anchor-placement="top-top" data-aos-duration="100" data-aos-offset="20" class="absolute inset-0 z-10 h-[96px]"></div>
 	</header>
 
 	<div id="content" class="site-content flex-grow">

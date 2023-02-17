@@ -6,30 +6,30 @@
 			<h1 id="text" class="entry-title -ml-[2px] !mb-0"><?php echo get_the_title(); ?></h1>
 			<div id="cursor"></div>
 			<p class="entry-excerpt"><?php echo get_the_excerpt(); ?></p>
-			<div class="bg-gray-200 dark:bg-dark inline-block p-2 px-4 rounded-lg">
-				<p class="inline-block mr-2 !mb-0">Published: </p><time datetime="<?php echo get_the_date( 'c' ); ?>" itemprop="datePublished"><?php echo get_the_date( ); ?></time>
+			<div class="bg-gray-200 dark:bg-dark inline-block p-2 px-4 rounded-lg !text-sm">
+				<p class="inline-block mr-2 !mb-0 !text-sm">Published: </p><time datetime="<?php echo get_the_date( 'c' ); ?>" itemprop="datePublished"><?php echo get_the_date( ); ?></time>
 			</div>
 		</header>
 
 		<script>
-			const title = document.querySelector('.entry-title');
-      const config = {
-            wait : 300,
-            speed : 74,
-      }
-      const content = title.textContent.trim();
-      title.textContent = '';
+			// const title = document.querySelector('.entry-title');
+      // const config = {
+      //       wait : 300,
+      //       speed : 74,
+      // }
+      // const content = title.textContent.trim();
+      // title.textContent = '';
 
-      let count = 0;
-      setTimeout(() => {
-            const counter = setInterval(() =>{
-                  title.textContent += content[count];
-                  count++;
-                  if(count >= content.length) {
-                        clearInterval(counter)
-                        }
-            },config.speed);
-      },config.wait)
+      // let count = 0;
+      // setTimeout(() => {
+      //       const counter = setInterval(() =>{
+      //             title.textContent += content[count];
+      //             count++;
+      //             if(count >= content.length) {
+      //                   clearInterval(counter)
+      //                   }
+      //       },config.speed);
+      // },config.wait)
 		</script>
 
 		<?php if( has_post_thumbnail() ) : ?>

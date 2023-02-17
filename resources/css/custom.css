@@ -66,16 +66,21 @@ hr {
     @apply bg-black hover:!bg-dark;
 }
 
-.single-post .entry-title::after {
+.content-start-padding {
+    @apply !mt-[1rem] sm:!mt-[2rem];
+}
+
+
+/* Blinking Type */
+/* .single-post .entry-title::after {
     @apply text-dark dark:text-light;
     content: "|";
     font-weight: bold;
     animation: blink 1000ms ease-in-out infinite;
-    /* change margin to left if language is left to right */
     margin-right: 5px;
   }
   @keyframes blink {
     to {
       opacity: 0;
     }
-  }
+  } */

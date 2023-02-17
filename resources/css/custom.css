@@ -62,3 +62,9 @@ hr {
 .entry-title {
     @apply font-black;
 }
+
+
+
+.is-style-dark {
+    @apply !bg-white;
+}

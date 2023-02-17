@@ -7,9 +7,17 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 	<?php wp_head(); ?>
+
+	<script>
+	if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+		document.documentElement.classList.add('dark');
+	} else {
+  	document.documentElement.classList.remove('dark')
+	}
+	</script>
 </head>
 
-<body <?php body_class( 'bg-white text-gray-900 antialiased' ); ?>>
+<body <?php body_class( 'bg-white dark:bg-black text-gray-900 dark:text-light antialiased' ); ?>>
 
 <?php do_action( 'tailpress_site_before' ); ?>
 
@@ -17,23 +25,32 @@
 
 	<?php do_action( 'tailpress_header' ); ?>
 
-	<header data-aos="remove-shadow" data-aos-anchor="#content" data-aos-anchor-placement="top-top" data-aos-offset="0" class="sticky top-0 w-full z-50">
-			<div class="lg:flex lg:justify-between lg:items-center bg-white transition-all duration-150 py-6 px-6">
+	<header class="sticky top-0 w-full z-50">
+
+			<div  class="sm:flex sm:justify-between sm:items-center bg-white dark:bg-black transition-all duration-150 py-6 px-4 pr-6 sm:px-6 lg:pr-10">
 				<div class="flex justify-between items-center">
 
 					<div class="flex items-center">
-						<?php 					
+
+						<?php // Site Logo
 						$site_logo_url = wp_get_attachment_image_url( get_theme_mod( 'custom_logo' ) , 'full' );
 						if( !empty( $site_logo_url ) ): ?>
 							<a href="/">
 								<img class="object-contain h-12 w-auto rounded-full z-50" src="<?php echo $site_logo_url;?>" alt="" srcset="">
 							</a>
-							<h1 class="text-xl font-bold mb-0 ml-6">Jared Thomas</h1>
+							<h1 class="text-xl font-bold mb-0 ml-4"><?php echo "Jared Thomas";?></h1>
 						<?php endif; ?>
+
+						<div class="flex justify-center px-4">
+							<div class="w-5 h-5 bg-green-500 relative" >
+								<div id="darkModeToggle" class="absolute bg-black w-5 h-5 hover:cursor-pointer transition-all ease-linear duration-100"></div>
+							</div>
+						</div>
+
 					</div>
 
 
-					<div class="lg:hidden">
+					<div class="sm:hidden">
 						<a href="#" aria-label="Toggle navigation" id="primary-menu-toggle">
 							<svg viewBox="0 0 20 20" class="inline-block w-6 h-6" version="1.1"
 								 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -46,38 +63,33 @@
 							</svg>
 						</a>
 					</div>
+					
 				</div>
 
-				<?php
-				wp_nav_menu(
-					array(
-						'container_id'    => 'primary-menu',
-						'container_class' => 'hidden bg-gray-100 mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
-						'menu_class'      => 'lg:flex lg:-mx-4',
-						'theme_location'  => 'primary',
-						'li_class'        => 'lg:mx-4 font-bold',
-						'fallback_cb'     => false,
-					)
-				);
-				?>
+				
+
+				<div class="flex items-center">
+					
+
+					<?php
+					wp_nav_menu(
+						array(
+							'container_id'    => 'primary-menu',
+							'container_class' => 'hidden bg-gray-100 mt-4 p-4 sm:mt-0 sm:p-0 sm:bg-transparent sm:block',
+							'menu_class'      => 'sm:flex sm:-mx-4',
+							'theme_location'  => 'primary',
+							'li_class'        => 'sm:mx-4 font-bold cursor-pointer',
+							'fallback_cb'     => false,
+						)
+					);
+					?>
+				</div>
 			</div>
 	</header>
 
 	<div id="content" class="site-content flex-grow">
 
-		<?php if ( is_front_page() ) { ?>
-			<!-- Start introduction -->
-			<div class="container mx-auto my-12 border-b pb-12">
-				<h1 class="font-bold text-lg text-secondary uppercase">TailPress</h1>
-				<h2 class="text-3xl lg:text-7xl tracking-tight font-extrabold my-4">Rapidly build your WordPress theme
-					with <a href="https://tailwindcss.com" class="text-primary">Tailwind CSS</a>.</h2>
-				<p class="max-w-screen-lg text-gray-700 text-lg font-medium mb-10">TailPress is your go-to starting
-					point for developing WordPress themes with TailwindCSS and comes with basic block-editor support out
-					of the box.</p>
-				<a href="#" class="btn">Button Default</a>
-			</div>
-			<!-- End introduction -->
-		<?php } ?>
+		<?php // Tailpress hero ?>
 
 		<?php do_action( 'tailpress_content_start' ); ?>
 

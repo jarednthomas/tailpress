@@ -1,28 +1,13 @@
-<?php get_header(); ?>
+<?php get_header( 'modern' ); ?>
 
-	<div class="container mx-auto">
-
+<div class="px-4 sm:px-8 pt-4">
 	<?php if ( have_posts() ) : ?>
-
-		<?php
-		while ( have_posts() ) :
-			the_post();
-			?>
-
+		<?php while ( have_posts() ) : the_post(); ?>
 			<?php get_template_part( 'template-parts/content', 'single' ); ?>
-
-			<?php
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-			?>
-
+			<?php if ( comments_open() || get_comments_number() ) {comments_template();} ?>
 		<?php endwhile; ?>
-
 	<?php endif; ?>
-
-	</div>
-
+</div>
+	
 <?php
 get_footer();

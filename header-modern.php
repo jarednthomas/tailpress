@@ -43,7 +43,7 @@
 
 						<div class="flex justify-center px-4">
 							<div class="w-10 h-5 relative">
-								<div id="darkModeToggle" class="absolute bg-white hover:bg-light rounded-md w-full h-full hover:cursor-pointer transition-all ease-in-out"></div>
+								<div id="darkModeToggle" class="absolute bg-white dark:bg-black hover:bg-light rounded-md w-full h-full hover:cursor-pointer transition-all ease-in-out"></div>
 							</div>
 						</div>
 

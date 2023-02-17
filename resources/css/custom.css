@@ -1,5 +1,4 @@
-/* article > *:not(.entry-content), */
-.entry-header,
+article > *:not(.entry-content),
 .entry-content > * {
     @apply mx-auto max-w-content;
 }
@@ -49,11 +48,11 @@ hr {
     @apply max-w-content mx-auto mb-6;
 }
 
-@media only screen and (max-width: theme(screens.lg)) {
+/* @media only screen and (max-width: theme(screens.lg)) {
     .post_thumbnail_wrapper {
         @apply alignfull;
     }
-}
+} */
 
 .entry-title {
     @apply font-black;

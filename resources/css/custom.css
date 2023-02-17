@@ -65,3 +65,17 @@ hr {
 .is-style-dark {
     @apply bg-black hover:!bg-dark;
 }
+
+.single-post .entry-title::after {
+    content: "|";
+    color: theme(colors.dark);
+    font-weight: bold;
+    animation: blink 1000ms ease-in-out infinite;
+    /* change margin to left if language is left to right */
+    margin-right: 5px;
+  }
+  @keyframes blink {
+    to {
+      opacity: 0;
+    }
+  }

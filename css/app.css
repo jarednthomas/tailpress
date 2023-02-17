@@ -768,6 +768,10 @@ li {
   width: 1.5rem;
 }
 
+.w-12 {
+  width: 3rem;
+}
+
 .max-w-sm {
   max-width: 24rem;
 }
@@ -1144,6 +1148,21 @@ hr {
 .is-style-dark:hover {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(17 18 19 / var(--tw-bg-opacity)) !important;
+}
+
+.single-post .entry-title::after {
+  content: "|";
+  color: #111213;
+  font-weight: bold;
+  animation: blink 1000ms ease-in-out infinite;
+  /* change margin to left if language is left to right */
+  margin-right: 5px;
+}
+
+@keyframes blink {
+  to {
+    opacity: 0;
+  }
 }
 
 [data-aos="remove-shadow"] {

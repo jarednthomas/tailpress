@@ -36,7 +36,7 @@
 						$site_logo_url = wp_get_attachment_image_url( get_theme_mod( 'custom_logo' ) , 'thumbnail' );
 						if( !empty( $site_logo_url ) ): ?>
 							<a href="/">
-								<img class="object-contain h-12 transition-all ease-linear duration-100 hover:scale-110 w-auto rounded-full z-50" src="<?php echo $site_logo_url;?>" alt="" srcset="">
+								<img class="object-contain w-12 h-12 transition-all ease-linear duration-100 hover:scale-110 w-auto rounded-full z-50" src="<?php echo $site_logo_url;?>" alt="" srcset="">
 							</a>
 							<h1 class="text-xl font-bold mb-0 ml-4 cursor-pointer select-none"><?php echo "Jared Thomas";?></h1>
 						<?php endif; ?>

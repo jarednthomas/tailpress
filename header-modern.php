@@ -38,12 +38,12 @@
 							<a href="/">
 								<img class="object-contain h-12 w-auto rounded-full z-50" src="<?php echo $site_logo_url;?>" alt="" srcset="">
 							</a>
-							<h1 class="text-xl font-bold mb-0 ml-4"><?php echo "Jared Thomas";?></h1>
+							<h1 class="text-xl font-bold mb-0 ml-4 cursor-pointer select-none"><?php echo "Jared Thomas";?></h1>
 						<?php endif; ?>
 
 						<div class="flex justify-center px-4">
-							<div class="w-5 h-5 bg-green-500 relative" >
-								<div id="darkModeToggle" class="absolute bg-black w-5 h-5 hover:cursor-pointer transition-all ease-linear duration-100"></div>
+							<div class="w-10 h-5 relative">
+								<div id="darkModeToggle" class="absolute bg-white hover:bg-light rounded-md w-full h-full hover:cursor-pointer transition-all ease-in-out"></div>
 							</div>
 						</div>
 

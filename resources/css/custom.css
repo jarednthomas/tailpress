@@ -33,10 +33,6 @@
     }
 }
 
-.almost-top {
-    top: 0px;
-}
-
 .admin-bar #page > header {
     @apply  md:top-[32px];
 }
@@ -50,7 +46,7 @@ hr {
 }
 
 .post_thumbnail_wrapper {
-    @apply max-w-content mx-auto pb-8;
+    @apply max-w-content mx-auto mb-6;
 }
 
 @media only screen and (max-width: theme(screens.lg)) {
@@ -63,8 +59,10 @@ hr {
     @apply font-black;
 }
 
-
+#darkModeToggle:hover {
+    @apply transition-all ease-in-out duration-500;
+}
 
 .is-style-dark {
-    @apply !bg-white;
+    @apply bg-black hover:!bg-dark;
 }

@@ -1,7 +1,6 @@
 (() => {
   // resources/js/app.js
   window.addEventListener("load", function() {
-    console.log("local storage: ", localStorage.theme);
     let darkModeToggle = this.document.querySelector("#darkModeToggle");
     if (localStorage.theme === "dark") {
       document.documentElement.classList.add("dark");

@@ -1,5 +1,9 @@
 @import "tailwindcss/base";
+@import "base/font";
+@import "base/links";
 @import "tailwindcss/components";
+
 @import "tailwindcss/utilities";
 
 @import "custom.css";
+@import "extend-aos.css";

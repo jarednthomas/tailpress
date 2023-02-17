@@ -1,0 +1,50 @@
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+}
+
+
+
+h1 {
+  @apply text-4xl mb-3;
+}
+
+.editor-post-title,
+h2 {
+  @apply text-3xl mb-3;
+  margin-block-start: 0.75rem;
+  margin-block-end: 0.75rem;
+}
+
+
+h3 {
+  @apply text-2xl mb-3;
+  margin-block-start: 0.75rem;
+  margin-block-end: 0.75rem;
+}
+
+h4 {
+  @apply text-xl mb-3;
+  margin-block-start: 0.75rem;
+  margin-block-end: 0.75rem;
+}
+
+p {
+  @apply text-lg mb-[1em];
+}
+
+li {
+  @apply text-lg;
+}
+
+.editor-post-title {
+  @apply pb-10;
+}
+
+
+@layer utilities {
+
+  .alignfull {
+    margin: 0rem calc(50% - 50vw) !important;
+  }
+}
+

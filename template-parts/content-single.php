@@ -1,9 +1,16 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'pb-12' ); ?>>
 
-	<header class="entry-header mb-4">
-		<?php the_title( sprintf( '<h1 class="entry-title text-2xl lg:text-5xl font-extrabold leading-tight mb-1"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
-		<time datetime="<?php echo get_the_date( 'c' ); ?>" itemprop="datePublished" class="text-sm text-gray-700"><?php echo get_the_date(); ?></time>
+	<header class="entry-header pt-8 pb-6">
+		<h1 class="entry-title -ml-[2px] !mb-0"><?php echo get_the_title(); ?></h1>
+		<p class="entry-excerpt"><?php echo get_the_excerpt(); ?></p>
+		<div class="bg-gray-300 inline-block p-2 px-4 rounded-lg">
+			<p class="inline-block mr-2 !mb-0">Published: </p><time datetime="<?php echo get_the_date( 'c' ); ?>" itemprop="datePublished"><?php echo get_the_date( ); ?></time>
+		</div>
 	</header>
+
+	<div data-aos="fade" class="post_thumbnail_wrapper">
+		<?php echo the_post_thumbnail('full',[ 'class' => 'lg:rounded-lg'] ); ?>
+	</div>
 
 	<div class="entry-content">
 		<?php the_content(); ?>

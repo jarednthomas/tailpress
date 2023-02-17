@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.0.18 | MIT License | https://tailwindcss.com
+! tailwindcss v3.2.1 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -187,6 +187,8 @@ textarea {
   /* 1 */
   font-size: 100%;
   /* 1 */
+  font-weight: inherit;
+  /* 1 */
   line-height: inherit;
   /* 1 */
   color: inherit;
@@ -353,13 +355,6 @@ input::-moz-placeholder, textarea::-moz-placeholder {
   /* 2 */
 }
 
-input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  opacity: 1;
-  /* 1 */
-  color: #9ca3af;
-  /* 2 */
-}
-
 input::placeholder,
 textarea::placeholder {
   opacity: 1;
@@ -415,15 +410,15 @@ video {
   height: auto;
 }
 
-/*
-Ensure the default browser behavior of the `hidden` attribute.
-*/
+/* Make elements with the HTML hidden attribute stay hidden by default */
 
 [hidden] {
   display: none;
 }
 
 *, ::before, ::after {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
   --tw-translate-y: 0;
   --tw-rotate: 0;
@@ -468,6 +463,119 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-sepia:  ;
 }
 
+::backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+}
+
+h1 {
+  margin-bottom: 0.75rem;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.editor-post-title,
+h2 {
+  margin-bottom: 0.75rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  -webkit-margin-before: 0.75rem;
+          margin-block-start: 0.75rem;
+  -webkit-margin-after: 0.75rem;
+          margin-block-end: 0.75rem;
+}
+
+h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  -webkit-margin-before: 0.75rem;
+          margin-block-start: 0.75rem;
+  -webkit-margin-after: 0.75rem;
+          margin-block-end: 0.75rem;
+}
+
+h4 {
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  -webkit-margin-before: 0.75rem;
+          margin-block-start: 0.75rem;
+  -webkit-margin-after: 0.75rem;
+          margin-block-end: 0.75rem;
+}
+
+p {
+  margin-bottom: 1em;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+li {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.editor-post-title {
+  padding-bottom: 2.5rem;
+}
+
+.entry-content :where(h1, h2, h3, h4, h5, h6, p) > a {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
+  text-decoration-line: underline;
+}
+
+.entry-content :where(h1, h2, h3, h4, h5, h6, p) > a:hover {
+  --tw-brightness: brightness(1.25);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .container {
   width: 100%;
   padding-right: 1rem;
@@ -483,8 +591,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 @media (min-width: 600px) {
   .container {
     max-width: 600px;
-    padding-right: 2rem;
-    padding-left: 2rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
   }
 }
 
@@ -497,14 +605,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 @media (min-width: 960px) {
   .container {
     max-width: 960px;
-    padding-right: 0rem;
-    padding-left: 0rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
   }
 }
 
 @media (min-width: 1280px) {
   .container {
     max-width: 1280px;
+    padding-right: 0rem;
+    padding-left: 0rem;
   }
 }
 
@@ -512,6 +622,22 @@ Ensure the default browser behavior of the `hidden` attribute.
   .container {
     max-width: 1440px;
   }
+}
+
+.fixed {
+  position: fixed;
+}
+
+.sticky {
+  position: sticky;
+}
+
+.top-0 {
+  top: 0px;
+}
+
+.z-50 {
+  z-index: 50;
 }
 
 .m-8 {
@@ -547,6 +673,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 2rem;
 }
 
+.mb-0 {
+  margin-bottom: 0px;
+}
+
+.ml-6 {
+  margin-left: 1.5rem;
+}
+
 .mt-4 {
   margin-top: 1rem;
 }
@@ -555,16 +689,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 2.5rem;
 }
 
-.mb-4 {
-  margin-bottom: 1rem;
+.-ml-\[2px\] {
+  margin-left: -2px;
 }
 
-.mb-1 {
-  margin-bottom: 0.25rem;
+.\!mb-0 {
+  margin-bottom: 0px !important;
+}
+
+.mr-2 {
+  margin-right: 0.5rem;
 }
 
 .mb-12 {
   margin-bottom: 3rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .inline-block {
@@ -583,6 +725,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 0.25rem;
 }
 
+.h-12 {
+  height: 3rem;
+}
+
 .h-6 {
   height: 1.5rem;
 }
@@ -597,6 +743,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-16 {
   width: 4rem;
+}
+
+.w-auto {
+  width: auto;
 }
 
 .w-6 {
@@ -651,8 +801,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 0.25rem;
 }
 
+.rounded-full {
+  border-radius: 9999px;
+}
+
 .rounded-xl {
   border-radius: 0.75rem;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
 }
 
 .border {
@@ -682,11 +840,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 
-.bg-gray-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
-}
-
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -702,8 +855,22 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
 
+.bg-gray-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+}
+
+.object-contain {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 .p-4 {
   padding: 1rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
 }
 
 .px-4 {
@@ -731,18 +898,30 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 1.5rem;
 }
 
-.py-3 {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-}
-
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
 
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
 .pb-12 {
   padding-bottom: 3rem;
+}
+
+.pt-8 {
+  padding-top: 2rem;
+}
+
+.pb-6 {
+  padding-bottom: 1.5rem;
+}
+
+.pl-\[20px\] {
+  padding-left: 20px;
 }
 
 .text-center {
@@ -759,19 +938,23 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 2rem;
 }
 
+.text-xl {
+  font-size: 1.25rem;
+}
+
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
 
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .font-light {
@@ -802,10 +985,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1.5rem;
 }
 
-.leading-tight {
-  line-height: 1.25;
-}
-
 .tracking-tight {
   letter-spacing: -0.025em;
 }
@@ -830,11 +1009,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
-.text-gray-600 {
-  --tw-text-opacity: 1;
-  color: rgb(75 85 99 / var(--tw-text-opacity));
-}
-
 .text-secondary {
   --tw-text-opacity: 1;
   color: rgb(20 184 166 / var(--tw-text-opacity));
@@ -850,9 +1024,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
+.text-gray-600 {
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+
 .text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+
+.underline {
+  text-decoration-line: underline;
 }
 
 .antialiased {
@@ -860,16 +1043,28 @@ Ensure the default browser behavior of the `hidden` attribute.
   -moz-osx-font-smoothing: grayscale;
 }
 
-.transition-colors {
-  transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
+.transition-all {
+  transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-colors {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.duration-150 {
   transition-duration: 150ms;
 }
 
 .duration-200 {
   transition-duration: 200ms;
+}
+
+.max-w-content {
+  max-width: 960px;
 }
 
 .alignfull {
@@ -898,33 +1093,21 @@ Ensure the default browser behavior of the `hidden` attribute.
 @media (min-width: 600px) {
   .alignleft:not(.wp-block-button) {
     margin-right: 0.5rem;
-  }
-
-  .alignleft:not(.wp-block-button) {
     float: left;
   }
 
   .alignright:not(.wp-block-button) {
     margin-left: 0.5rem;
-  }
-
-  .alignright:not(.wp-block-button) {
     float: right;
   }
 
   .wp-block-button.alignleft a {
     float: left;
-  }
-
-  .wp-block-button.alignleft a {
     margin-right: 1rem;
   }
 
   .wp-block-button.alignright a {
     float: right;
-  }
-
-  .wp-block-button.alignright a {
     margin-left: 1rem;
   }
 }
@@ -943,60 +1126,92 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: #4b5563;
 }
 
-article > *:not(.entry-content), .entry-content > * {
+.alignfull {
+  margin: 0rem calc(50% - 50vw) !important;
+}
+
+/* article > *:not(.entry-content), */
+
+.entry-header,
+.entry-content > * {
   margin-left: auto;
   margin-right: auto;
   max-width: 960px;
 }
 
-.entry-content h1, .block-editor-block-list__layout h1 {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-
-.entry-content h2, .block-editor-block-list__layout h2 {
-    font-size: 1.25rem;
-  }
-
-.entry-content h3, .block-editor-block-list__layout h3 {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
+.entry-content ul, .block-editor-block-list__layout ul {
+  padding-left: 20px;
+}
 
 .entry-content p a, .entry-content ul a, .entry-content ol a, .block-editor-block-list__layout p a, .block-editor-block-list__layout ul a, .block-editor-block-list__layout ol a {
-      --tw-text-opacity: 1;
-      color: rgb(59 130 246 / var(--tw-text-opacity));
-    }
-
-.entry-content p a, .entry-content ul a, .entry-content ol a, .block-editor-block-list__layout p a, .block-editor-block-list__layout ul a, .block-editor-block-list__layout ol a {
-      -webkit-text-decoration-line: underline;
-              text-decoration-line: underline;
-    }
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
+  text-decoration-line: underline;
+}
 
 .entry-content p a:hover, .entry-content ul a:hover, .entry-content ol a:hover, .block-editor-block-list__layout p a:hover, .block-editor-block-list__layout ul a:hover, .block-editor-block-list__layout ol a:hover {
-        -webkit-text-decoration-line: none;
-                text-decoration-line: none;
-      }
+  text-decoration-line: none;
+}
 
-.entry-content p, .entry-content ul, .entry-content ol, .block-editor-block-list__layout p, .block-editor-block-list__layout ul, .block-editor-block-list__layout ol {
-    margin-bottom: 2rem;
+.entry-content ul:not(.block-editor-block-variation-picker__variations) li, .block-editor-block-list__layout ul:not(.block-editor-block-variation-picker__variations) li {
+  list-style-position: inside;
+  list-style-type: disc;
+}
+
+.entry-content ol li, .block-editor-block-list__layout ol li {
+  list-style-position: inside;
+  list-style-type: decimal;
+}
+
+.almost-top {
+  top: 0px;
+}
+
+@media (min-width: 782px) {
+  .admin-bar #page > header {
+    top: 32px;
   }
+}
 
-.entry-content ul:not(.block-editor-block-variation-picker__variations) li, .block-editor-block-list__layout ul:not(.block-editor-block-variation-picker__variations) li {
-      list-style-position: inside;
-    }
+.header-offset {
+  padding-top: 96px;
+}
 
-.entry-content ul:not(.block-editor-block-variation-picker__variations) li, .block-editor-block-list__layout ul:not(.block-editor-block-variation-picker__variations) li {
-      list-style-type: disc;
-    }
+hr {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
 
-.entry-content ol li, .block-editor-block-list__layout ol li {
-      list-style-position: inside;
-    }
+.post_thumbnail_wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 2rem;
+  max-width: 960px;
+}
 
-.entry-content ol li, .block-editor-block-list__layout ol li {
-      list-style-type: decimal;
-    }
+@media only screen and (max-width: 960px) {
+  .post_thumbnail_wrapper {
+    margin: 2rem calc(50% - 50vw);
+    max-width: 100vw;
+    width: 100vw;
+    margin: 0rem calc(50% - 50vw);
+  }
+}
+
+.entry-title {
+  font-weight: 900;
+}
+
+[data-aos="remove-shadow"] {
+  box-shadow: 0 0 #fff;
+  -webkit-transition: box-shadow 900ms !important;
+  transition-duration: 900ms !important;
+  transition-property: box-shadow;
+}
+
+[data-aos="remove-shadow"].aos-animate {
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
 
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
@@ -1026,9 +1241,18 @@ article > *:not(.entry-content), .entry-content > * {
   .sm\:w-auto {
     width: auto;
   }
+
+  .sm\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 @media (min-width: 782px) {
+  .md\:top-\[32px\] {
+    top: 32px;
+  }
+
   .md\:my-6 {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
@@ -1083,6 +1307,10 @@ article > *:not(.entry-content), .entry-content > * {
     justify-content: space-between;
   }
 
+  .lg\:rounded-lg {
+    border-radius: 0.5rem;
+  }
+
   .lg\:bg-transparent {
     background-color: transparent;
   }
@@ -1093,11 +1321,6 @@ article > *:not(.entry-content), .entry-content > * {
 
   .lg\:text-7xl {
     font-size: 4.5rem;
-    line-height: 1;
-  }
-
-  .lg\:text-5xl {
-    font-size: 3rem;
     line-height: 1;
   }
 }

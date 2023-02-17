@@ -23,7 +23,7 @@ function tailpress_setup() {
 		)
 	);
 
-    add_theme_support( 'custom-logo' );
+  add_theme_support( 'custom-logo' );
 	add_theme_support( 'post-thumbnails' );
 
 	add_theme_support( 'align-wide' );
@@ -31,6 +31,7 @@ function tailpress_setup() {
 
 	add_theme_support( 'editor-styles' );
 	add_editor_style( 'css/editor-style.css' );
+	add_post_type_support ('page', 'excerpt');
 }
 
 add_action( 'after_setup_theme', 'tailpress_setup' );
@@ -107,3 +108,85 @@ function tailpress_nav_menu_add_submenu_class( $classes, $args, $depth ) {
 }
 
 add_filter( 'nav_menu_submenu_css_class', 'tailpress_nav_menu_add_submenu_class', 10, 3 );
+
+
+
+/**
+ * Theme Enqueue Scripts | Animate on Scroll (AOS) JS 
+ * https://github.com/michalsnik/aos/tree/v2
+ */
+function cc_theme_aos_enqueue() {
+	if ( wp_get_environment_type() === 'local' || true ) {
+			wp_enqueue_style('AOS_animate', 'https://unpkg.com/aos@2.3.1/dist/aos.css', false, null);
+			wp_enqueue_script('AOS', 'https://unpkg.com/aos@2.3.1/dist/aos.js', false, null, true);
+			wp_enqueue_script('aos-init', get_template_directory_uri() . '/js/aos-init.js', array( 'AOS' ), null, true);
+	}
+
+}
+add_action( 'wp_enqueue_scripts', 'cc_theme_aos_enqueue' );
+
+
+
+
+/**
+ * Commission Creative Pretty Printer
+ *
+ * @param  mixed $obj
+ * @param  mixed $label
+ * @return void
+ */
+function ccpp( $obj, $label = '' ) {
+
+	$data = json_encode( print_r( $obj,true ) );
+
+	?>
+	<style type="text/css">
+		#bsdLogger {
+		border-right: 2px solid #eee;
+		position: fixed;
+		top: 0;
+		left: 0px;
+		border-left: 4px solid #bbb;
+		padding: 6px;
+		background: white;
+		color: #444;
+		z-index: 999;
+		font-size: 1rem;
+		width: 450px;
+		height: 100vh;
+		overflow: scroll;
+		}
+
+		.admin-bar #bsdLogger {
+			top: 32px;
+			height: calc( 100vh - 32px );
+		}
+	</style>
+
+	<script type="text/javascript">
+
+		var doStuff = function(){
+            
+			var obj = <?php echo $data; ?>;
+			var logger = document.getElementById('bsdLogger');
+
+			if (!logger) {
+				logger = document.createElement('div');
+				logger.id = 'bsdLogger';
+				document.body.appendChild(logger);
+			}
+
+            var pre = document.createElement('pre');
+			var h2 = document.createElement('h2');
+			pre.innerHTML = obj;
+			h2.innerHTML = '<?php echo addslashes($label); ?>';
+			logger.appendChild(h2);
+			logger.appendChild(pre);
+		};
+
+		window.addEventListener ("DOMContentLoaded", doStuff, false);
+
+	</script>
+
+	<?php
+}

@@ -1,3 +1,5 @@
+@import "base/font";
+
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
@@ -15,4 +17,18 @@ body {
 
 .wp-block[data-align=full] {
     @apply max-w-full;
+}
+
+
+/* blockGap Solution, temporary. Has to be a better way. false isn't working in theme.json */
+.is-root-container :where(p) {
+    margin-block-start: 0em;
+
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.is-root-container :where(h1, h2, h3, h4, h5, h6) {
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
 }

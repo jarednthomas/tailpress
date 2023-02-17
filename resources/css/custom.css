@@ -67,8 +67,8 @@ hr {
 }
 
 .single-post .entry-title::after {
+    @apply text-dark dark:text-light;
     content: "|";
-    color: theme(colors.dark);
     font-weight: bold;
     animation: blink 1000ms ease-in-out infinite;
     /* change margin to left if language is left to right */

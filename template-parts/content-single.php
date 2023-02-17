@@ -14,8 +14,8 @@
 		<script>
 			const title = document.querySelector('.entry-title');
       const config = {
-            wait : 500,
-            speed : 100,
+            wait : 300,
+            speed : 74,
       }
       const content = title.textContent.trim();
       title.textContent = '';

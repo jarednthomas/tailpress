@@ -4,7 +4,7 @@
 
 <div class="px-4 sm:px-8 content-start-padding pb-20">
 	<?php if ( have_posts() ) : ?>
-		<div class="flex flex-wrap gap-[2em] gap-y-[3em] mx-auto max-w-content">
+		<div class="flex flex-wrap gap-[2em] gap-y-[3em] mx-auto max-w-content pt-2 lg:pt-3">
 			<?php while ( have_posts() ) : the_post(); ?>
 				<?php get_template_part( 'template-parts/content', 'blog-cards'); ?>
 			<?php endwhile; ?>

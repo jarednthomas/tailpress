@@ -6,7 +6,7 @@
 			<h1 id="text" class="entry-title -ml-[2px] !mb-0"><?php echo get_the_title(); ?></h1>
 			<div id="cursor"></div>
 			<p class="entry-excerpt"><?php echo get_the_excerpt(); ?></p>
-			<div class="bg-gray-200 dark:bg-dark inline-block p-2 px-4 rounded-lg !text-sm">
+			<div class="bg-gray-200 dark:bg-dark inline-block p-2 px-4 rounded-lg !text-sm hidden">
 				<p class="inline-block mr-2 !mb-0 !text-sm">Published: </p><time datetime="<?php echo get_the_date( 'c' ); ?>" itemprop="datePublished"><?php echo get_the_date( ); ?></time>
 			</div>
 		</header>

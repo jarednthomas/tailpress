@@ -3,7 +3,7 @@
 	<?php if( !is_home() && !is_front_page() ) : ?>
 
 		<header data-aos="fade" class="entry-header mb-6">
-			<h1 id="text" class="entry-title -ml-[2px] !mb-0"><?php echo get_the_title(); ?></h1>
+			<h1 id="text" class="entry-title -ml-[2px] !mb-1"><?php echo get_the_title(); ?></h1>
 			<div id="cursor"></div>
 			<p class="entry-excerpt"><?php echo get_the_excerpt(); ?></p>
 			<div class="bg-gray-200 dark:bg-dark inline-block p-2 px-4 rounded-lg !text-sm hidden">

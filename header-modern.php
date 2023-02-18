@@ -21,13 +21,15 @@
 
 <?php do_action( 'tailpress_site_before' ); ?>
 
-<div id="page" class="min-h-screen flex flex-col">
+<div id="page" class="min-h-screen flex flex-col ">
 
 	<?php do_action( 'tailpress_header' ); ?>
 
 	<header class="sticky top-0 w-full z-50">
 
-			<div class="sm:flex sm:justify-between sm:items-center bg-white dark:bg-black transition-all duration-150 py-6 px-4 pr-6 sm:px-6 sm:pr-10">
+			<!-- <div data-aos="remove-shadow" data-aos-anchor-placement="top-top" data-aos-duration="100" data-aos-offset="20" class="absolute inset-0 z-10 h-[96px]"></div> -->
+
+			<div class="flex justify-between items-center bg-white dark:bg-black transition-all duration-150 py-6 px-4 pr-6 sm:px-6 sm:pr-10 z-50">
 				<div class="flex justify-between items-center">
 
 					<div class="flex items-center">
@@ -47,16 +49,17 @@
 						</a>
 						<?php endif; ?>
 
-						<div class="flex justify-center px-4">
-							<div class="w-10 h-5 relative">
-								<div id="darkModeToggle" class="absolute bg-white dark:bg-black hover:bg-light rounded-md w-full h-full hover:cursor-pointer transition-all ease-in-out"></div>
+						<!-- <div class="flex justify-center px-4">
+							<div class="w-8 h-8 relative">
+								<div id="darkModeToggle" class="absolute rounded-full w-full h-full bg-gray-100 dark:bg-dark hover:cursor-pointer transition-all ease-in-out">
+								</div>
 							</div>
-						</div>
+						</div> -->
 
 					</div>
 
 
-					<div class="sm:hidden">
+					<div class="hidden">
 						<a href="#" aria-label="Toggle navigation" id="primary-menu-toggle">
 							<svg viewBox="0 0 20 20" class="inline-block w-6 h-6" version="1.1"
 								 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -81,10 +84,10 @@
 					wp_nav_menu(
 						array(
 							'container_id'    => 'primary-menu',
-							'container_class' => 'hidden bg-gray-100 mt-4 p-4 sm:mt-0 sm:p-0 sm:bg-transparent sm:block',
-							'menu_class'      => 'sm:flex sm:-mx-4',
+							'container_class' => 'mt-0 p-0 bg-transparent block',
+							'menu_class'      => 'flex -mx-4',
 							'theme_location'  => 'primary',
-							'li_class'        => 'sm:mx-4 font-bold cursor-pointer',
+							'li_class'        => 'mx-4 font-bold cursor-pointer',
 							'fallback_cb'     => false,
 						)
 					);
@@ -92,7 +95,6 @@
 				</div>
 			</div>
 
-			<div data-aos="remove-shadow" data-aos-anchor-placement="top-top" data-aos-duration="100" data-aos-offset="20" class="absolute inset-0 z-10 h-[96px]"></div>
 	</header>
 
 	<div id="content" class="site-content flex-grow">

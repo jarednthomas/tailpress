@@ -2,7 +2,7 @@
 window.addEventListener('DOMContentLoaded', (event) => {
 
   AOS.init({
-
+    disable: 'mobile',
     offset: 140,
     duration: 800,
     once: false,

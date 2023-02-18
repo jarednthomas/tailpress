@@ -7,11 +7,14 @@
 
 <?php do_action( 'tailpress_content_after' ); ?>
 
-<footer id="colophon" class="hidden site-footer bg-white dark:bg-black border py-10" role="contentinfo">
+<footer id="colophon" class="site-footer bg-white dark:bg-black py-3" role="contentinfo">
 	<?php do_action( 'tailpress_footer' ); ?>
-	<div class="container mx-auto text-center text-gray-500 dark:text-light">
-		&copy; <?php echo date_i18n( 'Y' );?> - <?php echo get_bloginfo( 'name' );?>
+	<div class="text-gray-500 dark:text-light flex items-center w-full pl-2">
+		<div id="darkModeToggle" class="rounded-full w-8 h-8 m-4 bg-gray-100 dark:bg-dark hover:cursor-pointer transition-all ease-in-out relative"></div>
+
+		<p class="mb-0 !text-sm">&copy; <?php echo date_i18n( 'Y' );?> - <?php echo get_bloginfo( 'name' );?></p>
 	</div>
+
 </footer>
 
 </div>

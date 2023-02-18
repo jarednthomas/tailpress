@@ -12,7 +12,7 @@ window.addEventListener('load', function () {
       darkModeToggle.addEventListener('click', function(e) {
             e.preventDefault();
 
-            // If prefers dark mode at system level
+            // Toggle Dark Mode
             if ( localStorage.theme === 'dark' ) {
                   localStorage.theme = 'light'
                   document.documentElement.classList.remove('dark')

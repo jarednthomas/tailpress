@@ -32,9 +32,9 @@ article > *:not(.entry-content),
     }
 }
 
-.admin-bar #page > header {
+/* .admin-bar #page > header {
     @apply  md:top-[32px];
-}
+} */
 
 .header-offset {
     padding-top: 96px;
@@ -66,10 +66,28 @@ hr {
     @apply bg-black hover:!bg-dark;
 }
 
+#darkModeToggle::after {
+    color: #bbb;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 12px;
+    content: "\f185";
+    margin-left: 10px;
+    position: absolute;
+    top: 7px;
+}
+
+#darkModeToggle.is-style-dark::after {
+    content: "\f186";
+}
+
 .content-start-padding {
     @apply !mt-[1rem] sm:!mt-[2rem];
 }
 
+html {
+    scroll-snap-type: y proximity;
+}
 
 /* Blinking Type */
 /* .single-post .entry-title::after {

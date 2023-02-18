@@ -16,11 +16,12 @@ module.exports = {
             padding: {
                 DEFAULT: '1rem',
                 sm: '1rem',
-                lg: '1rem',
-                xl: '0rem'
-            },
+                lg: '1rem'            },
         },
         extend: {
+            boxShadow: {
+                'custom': '1px 1px 1px 1px rgba(0, 0, 0, 0.1)',
+            },
             colors: tailpress.colorMapper(tailpress.theme('settings.color.palette', theme)),
             fontSize: tailpress.fontSizeMapper(tailpress.theme('settings.typography.fontSizes', theme))
         },

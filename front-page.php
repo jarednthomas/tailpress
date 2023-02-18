@@ -2,7 +2,7 @@
 ?>
 
 <div class="flex flex-col flex-grow h-[calc(100vh-185px)] justify-center items-center">
-	<h1>Lotta space, only <a class="underline underline-offset-8" href="/blog">blog</a></h1>
+	<h1>Lotta space, only <a class="font-extrabold underline hover:no-underline hover:text-primary underline-offset-8" href="/blog">blog</a></h1>
 </div>
 
 <div class="hidden px-4 sm:px-8 content-start-padding">

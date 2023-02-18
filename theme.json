@@ -20,13 +20,34 @@
         {
           "name": "Dark",
           "slug": "dark",
-          "color": "#111213"
+          "color": "#101619"
         },
         {
           "name": "Light",
           "slug": "light",
           "color": "#a9aAaB"
+        }, 
+        {
+          "name": "Dark Background",
+          "slug": "dark-bg",
+          "color": "#000"
+        },
+        {
+          "name": "Light Background",
+          "slug": "light-bg",
+          "color": "#fff"
+        },
+        {
+          "name": "Dark Text",
+          "slug": "dark-text",
+          "color": "#bbb"
+        },
+        {
+          "name": "Light Text",
+          "slug": "light-text",
+          "color": "#222"
         }
+
       ]
     },
     "typography": {

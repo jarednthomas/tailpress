@@ -17,7 +17,7 @@
 	</script>
 </head>
 
-<body <?php body_class( 'bg-white dark:bg-black text-gray-900 dark:text-light antialiased' ); ?>>
+<body <?php body_class( 'bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text antialiased' ); ?>>
 
 <?php do_action( 'tailpress_site_before' ); ?>
 
@@ -29,35 +29,25 @@
 
 			<!-- <div data-aos="remove-shadow" data-aos-anchor-placement="top-top" data-aos-duration="100" data-aos-offset="20" class="absolute inset-0 z-10 h-[96px]"></div> -->
 
-			<div class="flex justify-between items-center bg-white dark:bg-black transition-all duration-150 py-6 px-4 pr-6 sm:px-6 sm:pr-10 z-50">
+			<div class="flex justify-between items-center bg-light-bg dark:bg-dark-bg transition-all duration-150 py-6 px-4 pr-6 sm:px-6 sm:pr-10 z-50">
 				<div class="flex justify-between items-center">
 
 					<div class="flex items-center">
-
 						<?php // Site Logo
 						$site_logo_url = wp_get_attachment_image_url( get_theme_mod( 'custom_logo' ) , 'thumbnail' );
 						if( !empty( $site_logo_url ) ): ?>
 						<a href="/">
 							<div class="flex items-center">
 								<img class="object-contain w-12 h-12 transition-all ease-linear duration-100 hover:scale-110 rounded-full z-50" src="<?php echo $site_logo_url;?>" alt="" srcset="">
-								<h1 class="text-xl font-bold mb-0 ml-4 cursor-pointer select-none">
-									<span class="bg-clip-text text-transparent bg-gradient-to-r from-primary dark:from-secondary to-secondary dark:to-primary">
+								<h1 class="text-xl font-extrabold mb-0 ml-4 cursor-pointer select-none">
+									<span class="menu-item">
 										<?php echo "Jared Thomas";?>
 									</span>
 								</h1>
 							</div>
 						</a>
 						<?php endif; ?>
-
-						<!-- <div class="flex justify-center px-4">
-							<div class="w-8 h-8 relative">
-								<div id="darkModeToggle" class="absolute rounded-full w-full h-full bg-gray-100 dark:bg-dark hover:cursor-pointer transition-all ease-in-out">
-								</div>
-							</div>
-						</div> -->
-
 					</div>
-
 
 					<div class="hidden">
 						<a href="#" aria-label="Toggle navigation" id="primary-menu-toggle">
@@ -87,7 +77,7 @@
 							'container_class' => 'mt-0 p-0 bg-transparent block',
 							'menu_class'      => 'flex -mx-4',
 							'theme_location'  => 'primary',
-							'li_class'        => 'mx-4 font-bold cursor-pointer',
+							'li_class'        => 'mx-4 font-extrabold cursor-pointer',
 							'fallback_cb'     => false,
 						)
 					);

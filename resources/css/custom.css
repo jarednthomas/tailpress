@@ -89,6 +89,15 @@ html {
     scroll-snap-type: y proximity;
 }
 
+.menu-item {
+    @apply transition-colors duration-1000 ease-in-out;
+    @apply bg-clip-text text-transparent bg-gradient-to-l from-light-text dark:from-dark-text to-light-text dark:to-dark-text;
+}
+
+.menu-item:hover {
+    @apply bg-clip-text text-transparent bg-gradient-to-l from-primary dark:from-secondary to-secondary dark:to-primary;
+}
+
 /* Blinking Type */
 /* .single-post .entry-title::after {
     @apply text-dark dark:text-light;

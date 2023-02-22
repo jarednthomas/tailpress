@@ -1,3 +1,4 @@
+// import 'flowbite';
 
 window.addEventListener('load', function () {
 

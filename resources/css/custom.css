@@ -79,6 +79,7 @@ hr {
 
 #darkModeToggle.is-style-dark::after {
     content: "\f186";
+    margin-left: 11px;
 }
 
 .content-start-padding {
@@ -94,9 +95,14 @@ html {
     @apply bg-clip-text text-transparent bg-gradient-to-l from-light-text dark:from-dark-text to-light-text dark:to-dark-text;
 }
 
+.gradient-accent:hover,
 .menu-item:hover {
-    @apply bg-clip-text text-transparent bg-gradient-to-l from-primary dark:from-secondary to-secondary dark:to-primary;
+    @apply bg-clip-text text-transparent bg-gradient-to-l from-sky-500 dark:from-teal-500 to-teal-500 dark:to-sky-500;
 }
+
+/* .post_thumbnail_placeholder {
+    @apply rounded-md !aspect-[4/3] h-[313px] w-full object-cover group;
+} */
 
 /* Blinking Type */
 /* .single-post .entry-title::after {

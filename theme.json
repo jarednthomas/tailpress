@@ -7,16 +7,7 @@
     },
     "color": {
       "palette": [
-        {
-          "name": "Primary",
-          "slug": "primary",
-          "color": "#0EA5E9"
-        },
-        {
-          "name": "Secondary",
-          "slug": "secondary",
-          "color": "#14B8A6"
-        },
+
         {
           "name": "Dark",
           "slug": "dark",
@@ -47,7 +38,6 @@
           "slug": "light-text",
           "color": "#222"
         }
-
       ]
     },
     "typography": {

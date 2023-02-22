@@ -9,6 +9,7 @@ module.exports = {
         './**/*.php',
         './resources/css/*.css',
         './resources/js/*.js',
+        "./node_modules/flowbite/**/*.js",
         './safelist.txt'
     ],
     theme: {
@@ -16,7 +17,8 @@ module.exports = {
             padding: {
                 DEFAULT: '1rem',
                 sm: '1rem',
-                lg: '1rem'            },
+                lg: '1rem'            
+            },
         },
         extend: {
             boxShadow: {
@@ -35,6 +37,7 @@ module.exports = {
         }
     },
     plugins: [
+        require('flowbite/plugin'),
         tailpress.tailwind
     ]
 };

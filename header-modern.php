@@ -17,7 +17,7 @@
 	</script>
 </head>
 
-<body <?php body_class( 'bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text antialiased' ); ?>>
+<body <?php body_class( 'bg-light-bg dark:bg-neutral-900 text-light-text dark:text-dark-text antialiased' ); ?>>
 
 <?php do_action( 'tailpress_site_before' ); ?>
 
@@ -27,9 +27,7 @@
 
 	<header class="sticky top-0 w-full z-50">
 
-			<!-- <div data-aos="remove-shadow" data-aos-anchor-placement="top-top" data-aos-duration="100" data-aos-offset="20" class="absolute inset-0 z-10 h-[96px]"></div> -->
-
-			<div class="flex justify-between items-center bg-light-bg dark:bg-dark-bg transition-all duration-150 py-6 px-4 pr-6 sm:px-6 sm:pr-10 z-50">
+			<div class="flex justify-between items-center bg-light-bg dark:bg-neutral-900 bg-opacity-80 dark:bg-opacity-60 transition-all duration-150 py-4 px-4 pr-6 sm:px-6 sm:pr-10 z-50">
 				<div class="flex justify-between items-center">
 
 					<div class="flex items-center">

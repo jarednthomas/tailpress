@@ -55,7 +55,7 @@ hr {
 } */
 
 .entry-title {
-    @apply font-black;
+    @apply font-black !text-2xl sm:!text-4xl;
 }
 
 #darkModeToggle:hover {
@@ -83,7 +83,7 @@ hr {
 }
 
 .content-start-padding {
-    @apply !mt-[1rem] sm:!mt-[2rem];
+    @apply !mt-[1rem] sm:!mt-[2rem] lg:!mt-[4rem];
 }
 
 html {

@@ -2,13 +2,17 @@
 
 	<?php if( !is_home() && !is_front_page() ) : ?>
 
-		<header data-aos="fade" class="entry-header mb-6">
+		<header data-aos="fade" class="entry-header pb-5 mb-12 border-b border-neutral-300 dark:border-neutral-700">
 			<h1 id="text" class="entry-title -ml-[2px] !mb-1"><?php echo get_the_title(); ?></h1>
 			<div id="cursor"></div>
 			<p class="entry-excerpt"><?php echo get_the_excerpt(); ?></p>
-			<div class="inline-block hidden bg-gray-200 dark:bg-dark text-light-text dark:text-dark-text p-2 px-4 rounded-lg !text-sm">
-				<p class="inline-block mr-2 !mb-0 !text-sm">Published: </p><time datetime="<?php echo get_the_date( 'c' ); ?>" itemprop="datePublished"><?php echo get_the_date( ); ?></time>
-			</div>
+			<?php if( has_post_thumbnail() ) : ?>
+				<div data-aos="fade" data-aos-duration="1000" class="post_thumbnail_wrapper">
+					<?php echo the_post_thumbnail( 'full',  $attr = [ 'class' => 'rounded-md'] ); ?>
+				</div>
+			<?php endif; ?>
+			<time datetime="<?php echo get_the_date( 'c' ); ?>" itemprop="datePublished"><?php echo get_the_date( 'M d, Y' ); ?></time>
+
 		</header>
 
 		<script>
@@ -32,13 +36,8 @@
       // },config.wait)
 		</script>
 
-		<?php if( has_post_thumbnail() ) : ?>
-			<div data-aos="fade" data-aos-duration="1000" class="post_thumbnail_wrapper">
-				<?php echo the_post_thumbnail( 'full',  $attr = [ 'class' => 'rounded-md'] ); ?>
-			</div>
-		<?php endif; ?>
-
 		
+
 
 	<?php endif; ?>
 
